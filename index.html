@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecureLearn | Learn Cybersecurity by Doing</title>
+  <meta name="description" content="Free cybersecurity courses, cheat sheets and browser tools for students who want to become pentesters and SOC analysts.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <script src="js/theme-init.js"></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">// learn. practice. defend.</p>
+          <h1>Learn cybersecurity by <span class="text-gradient">doing real labs</span></h1>
+          <p class="lead">Free, beginner friendly courses, cheat sheets and browser tools. Built for students who want to become pentesters and SOC analysts.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="courses.html">Browse courses</a>
+            <a class="btn btn-ghost btn-lg" href="roadmap.html">See the roadmap</a>
+          </div>
+          <ul class="hero-points">
+            <li>100% free</li>
+            <li>Hands on labs</li>
+            <li>Ethics first</li>
+          </ul>
+        </div>
+
+        <div class="terminal" role="img" aria-label="Example terminal session showing an Nmap scan">
+          <div class="terminal-bar"><span></span><span></span><span></span><b>student@securelearn:~</b></div>
+          <pre class="terminal-body" id="terminal-body"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-strip" aria-label="Site numbers">
+      <div class="container">
+        <div class="stats-grid" id="home-stats"></div>
+      </div>
+    </section>
+
+    <!-- Paths -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">// choose a path</p>
+          <h2>Where do you want to go?</h2>
+          <p>Every path starts with the same basics. Pick the one that matches your goal.</p>
+        </div>
+        <div class="grid grid-3">
+          <a class="card card-hover path-card reveal" href="courses.html?category=Pentesting">
+            <div class="card-icon" aria-hidden="true">🕵️</div>
+            <h3>Penetration Testing</h3>
+            <p>Learn to find weaknesses the way an attacker would, then report them so they get fixed.</p>
+            <span class="card-link">See pentesting courses &rarr;</span>
+          </a>
+          <a class="card card-hover path-card reveal" href="courses.html?category=Blue%20Team">
+            <div class="card-icon" aria-hidden="true">📡</div>
+            <h3>SOC and Blue Team</h3>
+            <p>Learn to watch for attacks, read logs and respond to incidents as a security analyst.</p>
+            <span class="card-link">See blue team courses &rarr;</span>
+          </a>
+          <a class="card card-hover path-card reveal" href="courses.html?category=Foundations">
+            <div class="card-icon" aria-hidden="true">🛡️</div>
+            <h3>Start from zero</h3>
+            <p>New to security? Begin with the basics and build a strong base before choosing a path.</p>
+            <span class="card-link">See foundations &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured courses -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="row between section-head is-wide">
+          <div class="reveal">
+            <p class="eyebrow">// featured</p>
+            <h2>Popular courses</h2>
+          </div>
+          <a class="btn btn-ghost" href="courses.html">View all courses</a>
+        </div>
+        <div class="grid grid-3" id="featured-courses"></div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <p class="eyebrow">// why securelearn</p>
+          <h2>Built for how students actually learn</h2>
+        </div>
+        <div class="grid grid-4">
+          <div class="card feature reveal">
+            <div class="card-icon" aria-hidden="true">🧪</div>
+            <h3>Lab first</h3>
+            <p>Every topic comes with something you can try in a safe, isolated lab.</p>
+          </div>
+          <div class="card feature reveal">
+            <div class="card-icon" aria-hidden="true">📋</div>
+            <h3>Quick references</h3>
+            <p>Copy ready cheat sheets for Nmap, Linux, Wireshark and more.</p>
+          </div>
+          <div class="card feature reveal">
+            <div class="card-icon" aria-hidden="true">🧰</div>
+            <h3>Private tools</h3>
+            <p>Browser tools that run on your device. Nothing you type is sent anywhere.</p>
+          </div>
+          <div class="card feature reveal">
+            <div class="card-icon" aria-hidden="true">⚖️</div>
+            <h3>Ethics built in</h3>
+            <p>Learn the law and the rules of engagement before you learn the tools.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="row between section-head is-wide">
+          <div class="reveal">
+            <p class="eyebrow">// try it now</p>
+            <h2>Security tools in your browser</h2>
+          </div>
+          <a class="btn btn-ghost" href="tools.html">See all tools</a>
+        </div>
+        <div class="grid grid-3" id="tools-preview"></div>
+      </div>
+    </section>
+
+    <!-- Posts -->
+    <section class="section">
+      <div class="container">
+        <div class="row between section-head is-wide">
+          <div class="reveal">
+            <p class="eyebrow">// from the blog</p>
+            <h2>Latest articles</h2>
+          </div>
+          <a class="btn btn-ghost" href="blog.html">Read the blog</a>
+        </div>
+        <div class="grid grid-3" id="latest-posts"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-flush-top">
+      <div class="container">
+        <div class="cta-box reveal">
+          <h2>Get new lessons in your inbox</h2>
+          <p>One short email when we add a new course or article. No spam. This form is a demo and does not save your email.</p>
+          <form class="inline-form" id="newsletter-form" novalidate>
+            <label class="sr-only" for="newsletter-email">Email address</label>
+            <input class="input" id="newsletter-email" type="email" placeholder="you@example.com" autocomplete="email">
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/pages/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in or Sign up | SecureLearn</title>
+  <meta name="description" content="Log in or create a SecureLearn account. This is a frontend demo and no account is created.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <script src="js/theme-init.js"></script>
+</head>
+<body data-page="auth">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <div class="auth-tabs" role="group" aria-label="Choose login or sign up">
+          <button type="button" id="tab-login" aria-pressed="true">Log in</button>
+          <button type="button" id="tab-signup" aria-pressed="false">Sign up</button>
+        </div>
+        <h1 id="auth-title" class="title-md">Welcome back</h1>
+
+        <!-- Login -->
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="l-email">Email</label>
+            <input class="input" id="l-email" type="email" autocomplete="email" aria-describedby="l-email-error">
+            <span class="field-error" id="l-email-error"></span>
+          </div>
+          <div class="field">
+            <label for="l-password">Password</label>
+            <div class="input-group">
+              <input class="input" id="l-password" type="password" autocomplete="current-password" aria-describedby="l-password-error">
+              <button class="toggle-btn" type="button" data-toggle-password="l-password" aria-pressed="false">Show</button>
+            </div>
+            <span class="field-error" id="l-password-error"></span>
+          </div>
+          <label class="check mb-2"><input type="checkbox"> Remember me</label>
+          <button class="btn btn-primary btn-block" type="submit">Log in</button>
+        </form>
+
+        <!-- Sign up -->
+        <form id="signup-form" novalidate hidden>
+          <div class="field">
+            <label for="s-name">Full name</label>
+            <input class="input" id="s-name" type="text" autocomplete="name" aria-describedby="s-name-error">
+            <span class="field-error" id="s-name-error"></span>
+          </div>
+          <div class="field">
+            <label for="s-email">Email</label>
+            <input class="input" id="s-email" type="email" autocomplete="email" aria-describedby="s-email-error">
+            <span class="field-error" id="s-email-error"></span>
+          </div>
+          <div class="field">
+            <label for="s-password">Password</label>
+            <div class="input-group">
+              <input class="input" id="s-password" type="password" autocomplete="new-password" aria-describedby="s-strength s-password-error">
+              <button class="toggle-btn" type="button" data-toggle-password="s-password" aria-pressed="false">Show</button>
+            </div>
+            <div class="meter" aria-hidden="true"><div class="meter-bar" id="s-bar"></div></div>
+            <span class="field-hint" id="s-strength">Use 12 or more characters.</span>
+            <span class="field-error" id="s-password-error"></span>
+          </div>
+          <div class="field">
+            <label for="s-confirm">Confirm password</label>
+            <input class="input" id="s-confirm" type="password" autocomplete="new-password" aria-describedby="s-confirm-error">
+            <span class="field-error" id="s-confirm-error"></span>
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" id="s-terms" aria-describedby="s-terms-error"> I agree to use what I learn legally and ethically</label>
+            <span class="field-error" id="s-terms-error"></span>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Create account</button>
+        </form>
+
+        <p class="auth-note">Frontend demo only. No account is created and nothing you type is stored or sent.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/password.js"></script>
+  <script src="js/pages/auth.js"></script>
+</body>
+</html>

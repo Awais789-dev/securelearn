@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | SecureLearn</title>
+  <meta name="description" content="Short, practical cybersecurity articles on careers, pentesting, blue team work and staying safe online.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <script src="js/theme-init.js"></script>
+</head>
+<body data-page="blog">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li><a href="index.html">Home</a></li>
+          <li>Blog</li>
+        </ol>
+        <h1>Blog</h1>
+        <p class="lead">Short, practical articles on careers, pentesting, blue team work and staying safe online.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="toolbar">
+          <div class="search-box">
+            <label class="sr-only" for="post-search">Search articles</label>
+            <input class="input" id="post-search" type="search" placeholder="Search articles">
+          </div>
+        </div>
+        <div class="chip-row" id="category-chips" role="group" aria-label="Filter by category"></div>
+
+        <p class="result-count mt-3" id="result-count" aria-live="polite"></p>
+        <div class="grid grid-3" id="post-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/pages/blog.js"></script>
+</body>
+</html>

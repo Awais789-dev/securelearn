@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | SecureLearn</title>
+  <meta name="description" content="Get in touch with SecureLearn. Ask a question, suggest a topic or report a problem.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <script src="js/theme-init.js"></script>
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li><a href="index.html">Home</a></li>
+          <li>Contact</li>
+        </ol>
+        <h1>Contact us</h1>
+        <p class="lead">Have a question, a topic idea or found a mistake? Send a note.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-layout">
+        <form class="card" id="contact-form" novalidate>
+          <div class="split">
+            <div class="field">
+              <label for="c-name">Name</label>
+              <input class="input" id="c-name" type="text" autocomplete="name" aria-describedby="c-name-error">
+              <span class="field-error" id="c-name-error"></span>
+            </div>
+            <div class="field">
+              <label for="c-email">Email</label>
+              <input class="input" id="c-email" type="email" autocomplete="email" aria-describedby="c-email-error">
+              <span class="field-error" id="c-email-error"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-subject">Subject</label>
+            <select class="select" id="c-subject" aria-describedby="c-subject-error">
+              <option value="">Choose a subject</option>
+              <option>General question</option>
+              <option>Suggest a course or topic</option>
+              <option>Report a mistake</option>
+              <option>Partnership</option>
+            </select>
+            <span class="field-error" id="c-subject-error"></span>
+          </div>
+          <div class="field">
+            <label for="c-message">Message</label>
+            <textarea class="textarea" id="c-message" maxlength="500" aria-describedby="c-message-error"></textarea>
+            <span class="char-count" id="c-count">0 / 500</span>
+            <span class="field-error" id="c-message-error"></span>
+          </div>
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="field-hint mt-2 mb-0">Demo form. Your message is not sent or stored anywhere.</p>
+        </form>
+
+        <aside class="card">
+          <h2 class="title-sm">Other ways to reach us</h2>
+          <ul class="contact-list mt-2">
+            <li><span aria-hidden="true">✉️</span><div><strong>Email</strong><span>hello@securelearn.example</span></div></li>
+            <li><span aria-hidden="true">💬</span><div><strong>Community</strong><span>Join our learner chat (coming soon)</span></div></li>
+            <li><span aria-hidden="true">🕒</span><div><strong>Reply time</strong><span>Usually within two working days</span></div></li>
+          </ul>
+          <div class="callout is-info mt-3">
+            <strong>Found a security issue?</strong> Please report it privately and never post it publicly before it is fixed.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container container-narrow">
+        <div class="section-head center reveal">
+          <p class="eyebrow">// faq</p>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="accordion reveal">
+          <details open>
+            <summary>Is SecureLearn really free?</summary>
+            <div class="accordion-body"><p>Yes. All courses, cheat sheets and tools are free to use.</p></div>
+          </details>
+          <details>
+            <summary>Do I need any experience to start?</summary>
+            <div class="accordion-body"><p>No. Start with Cybersecurity Fundamentals, then follow the roadmap. Basic computer skills are enough.</p></div>
+          </details>
+          <details>
+            <summary>Is it legal to practice hacking?</summary>
+            <div class="accordion-body"><p>It is legal when you test systems you own or have written permission to test. Use your own lab or platforms made for practice. Never test anyone else's systems without permission.</p></div>
+          </details>
+          <details>
+            <summary>Do the tools send my data anywhere?</summary>
+            <div class="accordion-body"><p>No. The tools run in your browser and nothing you type is uploaded. Still, avoid typing real passwords into any website.</p></div>
+          </details>
+          <details>
+            <summary>Do I get a certificate?</summary>
+            <div class="accordion-body"><p>Not yet. The roadmap lists industry certifications that employers recognize.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/pages/contact.js"></script>
+</body>
+</html>

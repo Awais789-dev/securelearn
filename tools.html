@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Tools | SecureLearn</title>
+  <meta name="description" content="Free security tools that run in your browser: password checker, password generator, hash generator, Base64, ciphers and port lookup.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <script src="js/theme-init.js"></script>
+</head>
+<body data-page="tools">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li><a href="index.html">Home</a></li>
+          <li>Tools</li>
+        </ol>
+        <h1>Security Tools</h1>
+        <p class="lead">Small tools that run fully in your browser. What you type never leaves your device.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="chip-row mb-4" id="tool-tabs" role="group" aria-label="Choose a tool"></div>
+
+        <!-- 1. Password checker -->
+        <div class="tool-panel" id="tool-password-checker">
+          <h2>Password Checker</h2>
+          <p class="muted">Type a password to see its strength. Do not type a password you use for a real account.</p>
+          <div class="card">
+            <div class="field">
+              <label for="pw-input">Password to test</label>
+              <div class="input-group">
+                <input class="input" id="pw-input" type="password" autocomplete="off" spellcheck="false" placeholder="Type a test password">
+                <button class="toggle-btn" type="button" data-toggle-password="pw-input" aria-pressed="false">Show</button>
+              </div>
+            </div>
+            <div class="meter" aria-hidden="true"><div class="meter-bar" id="pw-bar"></div></div>
+            <div class="stat-line" aria-live="polite">
+              <span>Strength: <strong id="pw-label">Enter a password</strong></span>
+              <span>Entropy: <strong id="pw-bits">-</strong></span>
+              <span>Estimated crack time: <strong id="pw-time">-</strong></span>
+            </div>
+            <ul class="check-results" id="pw-checks"></ul>
+            <p class="field-hint mt-2 mb-0">The time estimate assumes 10 billion guesses per second, which is a fast offline attack. It is a rough guide, not a promise.</p>
+          </div>
+        </div>
+
+        <!-- 2. Password generator -->
+        <div class="tool-panel" id="tool-password-generator" hidden>
+          <h2>Password Generator</h2>
+          <p class="muted">Uses your browser's secure random number generator.</p>
+          <div class="card">
+            <div class="output-box">
+              <code id="gen-output" aria-live="polite"></code>
+              <button class="btn btn-ghost btn-sm" id="gen-copy" type="button">Copy</button>
+            </div>
+            <p class="field-hint mt-2 mb-0" id="gen-info"></p>
+
+            <div class="field mt-3">
+              <label for="gen-length">Length</label>
+              <div class="range-row">
+                <input id="gen-length" type="range" min="8" max="64" value="16">
+                <output id="gen-length-out" for="gen-length">16</output>
+              </div>
+            </div>
+
+            <div class="option-grid">
+              <label class="check"><input type="checkbox" id="gen-upper" checked> Uppercase (A-Z)</label>
+              <label class="check"><input type="checkbox" id="gen-lower" checked> Lowercase (a-z)</label>
+              <label class="check"><input type="checkbox" id="gen-digits" checked> Numbers (0-9)</label>
+              <label class="check"><input type="checkbox" id="gen-symbols" checked> Symbols (!@#$)</label>
+              <label class="check"><input type="checkbox" id="gen-ambiguous"> Skip look-alike characters</label>
+            </div>
+            <button class="btn btn-primary" id="gen-new" type="button">Generate new password</button>
+          </div>
+        </div>
+
+        <!-- 3. Hash generator -->
+        <div class="tool-panel" id="tool-hash-generator" hidden>
+          <h2>Hash Generator</h2>
+          <p class="muted">Get SHA hashes of text or a file. Compare a file hash with the one a website publishes to check a download.</p>
+          <div class="card">
+            <div class="field">
+              <label for="hash-text">Text</label>
+              <textarea class="textarea" id="hash-text" placeholder="Type or paste text"></textarea>
+            </div>
+            <div class="field">
+              <label for="hash-file">Or choose a file (up to 100 MB)</label>
+              <input class="input" id="hash-file" type="file">
+            </div>
+            <p class="field-hint" id="hash-status" aria-live="polite">Type some text or choose a file.</p>
+            <div id="hash-results"></div>
+            <p class="field-hint mb-0">MD5 is left out on purpose. It is broken for security use. SHA-1 is shown only for comparing old checksums.</p>
+          </div>
+        </div>
+
+        <!-- 4. Base64 -->
+        <div class="tool-panel" id="tool-base64" hidden>
+          <h2>Base64 Tool</h2>
+          <p class="muted">Base64 is encoding, not encryption. Anyone can decode it.</p>
+          <div class="card">
+            <div class="field">
+              <label for="b64-input">Input</label>
+              <textarea class="textarea" id="b64-input" placeholder="Text to encode, or Base64 to decode"></textarea>
+            </div>
+            <div class="row mb-2">
+              <button class="btn btn-primary" id="b64-encode" type="button">Encode</button>
+              <button class="btn btn-ghost" id="b64-decode" type="button">Decode</button>
+            </div>
+            <p class="field-error" id="b64-error" role="alert"></p>
+            <div class="field">
+              <label for="b64-output">Result</label>
+              <textarea class="textarea" id="b64-output" readonly></textarea>
+            </div>
+            <button class="btn btn-ghost btn-sm" id="b64-copy" type="button">Copy result</button>
+          </div>
+        </div>
+
+        <!-- 5. Ciphers -->
+        <div class="tool-panel" id="tool-ciphers" hidden>
+          <h2>Cipher Tool</h2>
+          <p class="muted">Classic ciphers are not secure today, but they are a great way to learn how encryption works.</p>
+          <div class="card">
+            <div class="split">
+              <div class="field">
+                <label for="cipher-type">Cipher</label>
+                <select class="select" id="cipher-type">
+                  <option value="caesar">Caesar</option>
+                  <option value="vigenere">Vigenere</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cipher-mode">Mode</label>
+                <select class="select" id="cipher-mode">
+                  <option value="encrypt">Encrypt</option>
+                  <option value="decrypt">Decrypt</option>
+                </select>
+              </div>
+            </div>
+            <div class="field" id="caesar-field">
+              <label for="caesar-shift">Shift (1 to 25, use 13 for ROT13)</label>
+              <input class="input" id="caesar-shift" type="number" min="1" max="25" value="3">
+            </div>
+            <div class="field" id="vigenere-field" hidden>
+              <label for="vigenere-key">Keyword (letters only)</label>
+              <input class="input" id="vigenere-key" type="text" value="KEY" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="cipher-input">Text</label>
+              <textarea class="textarea" id="cipher-input" placeholder="Type your message">HELLO WORLD</textarea>
+            </div>
+            <p class="field-error" id="cipher-error" role="alert"></p>
+            <div class="field">
+              <label for="cipher-output">Result</label>
+              <textarea class="textarea" id="cipher-output" readonly></textarea>
+            </div>
+            <button class="btn btn-ghost btn-sm" id="cipher-copy" type="button">Copy result</button>
+          </div>
+        </div>
+
+        <!-- 6. Port lookup -->
+        <div class="tool-panel is-wide" id="tool-port-lookup" hidden>
+          <h2>Port Lookup</h2>
+          <p class="muted">Search by port number, service or protocol, for example 443, ssh or udp.</p>
+          <div class="toolbar">
+            <div class="search-box">
+              <label class="sr-only" for="port-search">Search ports</label>
+              <input class="input" id="port-search" type="search" placeholder="Search ports">
+            </div>
+            <span class="muted" id="port-count" aria-live="polite"></span>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th scope="col">Port</th><th scope="col">Protocol</th><th scope="col">Service</th><th scope="col">Notes</th></tr>
+              </thead>
+              <tbody id="port-rows"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/password.js"></script>
+  <script src="js/pages/tools.js"></script>
+</body>
+</html>

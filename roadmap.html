@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Roadmap | SecureLearn</title>
+  <meta name="description" content="A step by step cybersecurity roadmap from foundations to pentesting or SOC work, with a progress tracker and certification guide.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <script src="js/theme-init.js"></script>
+</head>
+<body data-page="roadmap">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li><a href="index.html">Home</a></li>
+          <li>Roadmap</li>
+        </ol>
+        <h1>Your cybersecurity roadmap</h1>
+        <p class="lead">Five stages from zero to job ready. Tick off each step as you go. Your progress is saved in this browser.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container container-narrow">
+        <div class="overall">
+          <div class="row between">
+            <strong>Overall progress</strong>
+            <button class="btn btn-ghost btn-sm" id="reset-progress" type="button">Reset</button>
+          </div>
+          <div class="progress" id="overall-progress" role="progressbar" aria-label="Overall roadmap progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-bar" id="overall-bar"></div>
+          </div>
+          <p class="muted mt-2 mb-0" id="overall-text" aria-live="polite"></p>
+        </div>
+
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">// certifications</p>
+          <h2>Certifications to consider</h2>
+          <p>Certificates are optional, but they can help you get past the first resume check. Choose based on your path and budget.</p>
+        </div>
+        <div class="grid grid-3" id="cert-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/pages/roadmap.js"></script>
+</body>
+</html>

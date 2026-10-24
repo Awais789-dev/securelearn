@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat Sheets | SecureLearn</title>
+  <meta name="description" content="Copy ready cheat sheets for Nmap, Linux, networking, Wireshark, hashing and web testing, plus a common ports list.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <script src="js/theme-init.js"></script>
+</head>
+<body data-page="cheatsheets">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <ol class="breadcrumbs">
+          <li><a href="index.html">Home</a></li>
+          <li>Cheat Sheets</li>
+        </ol>
+        <h1>Cheat Sheets</h1>
+        <p class="lead">Commands you will use again and again. Click Copy to grab one, or search across every sheet.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="callout is-info mb-3">
+          <strong>Use responsibly.</strong> Run scanning and testing commands only on systems you own or have written permission to test.
+        </div>
+
+        <div class="toolbar">
+          <div class="search-box">
+            <label class="sr-only" for="sheet-search">Search all cheat sheets</label>
+            <input class="input" id="sheet-search" type="search" placeholder="Search all sheets, for example: scan, port, hash">
+          </div>
+        </div>
+        <div class="chip-row" id="sheet-tabs" role="group" aria-label="Choose a cheat sheet"></div>
+
+        <p class="result-count mt-3" id="result-count" aria-live="polite"></p>
+        <div id="sheet-results"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/pages/cheatsheets.js"></script>
+</body>
+</html>
